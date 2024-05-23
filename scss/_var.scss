@@ -1,0 +1,24 @@
+//$이름:값;
+$fs12: 12px;
+$fs20: $fs12;
+$imgurl: "../images/";
+//const a ="text";
+//const b = '문자사이에 다른변수를${a}'넣을떄
+
+div {
+  width: 100px;
+  height: 100px;
+  background: url(#{$imgurl}cl.png) no-repeat center;
+}
+
+$class: ".box";
+$w: "width";
+#{$class} {
+  #{$w}: 100px;
+  height: 100px;
+  border: 2px solid red;
+}
+p {
+  $fs12: 15px;
+  font-size: $fs12;
+}

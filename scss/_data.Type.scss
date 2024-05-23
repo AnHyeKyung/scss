@@ -1,0 +1,68 @@
+// string 문자형
+$p: position;
+$abs: absolute;
+$url: "../images/cl.png";
+.string {
+  #{$p}: $abs;
+  background: $url;
+}
+
+// number 숫자형
+$w: 20px;
+$h: 3rem;
+$lh: 1;
+$result: calc($w + $h);
+.number {
+  font-size: $result;
+  line-height: $lh;
+}
+
+// color 색상형
+$blue: blue;
+$white: #fff;
+$mint: #79b9a4;
+$black02: rgba(0, 0, 0, 0.2);
+$blue05: rgba($blue, 0.5);
+$mint06: rgba($mint, 0.6);
+.color {
+  color: $mint06;
+}
+
+// list 배열
+$marginTop: (10, 20, 30, 40, 50);
+
+//@each $배열의아이템 in $배열변수명{}
+@each $item in $marginTop {
+  .mt#{$item} {
+    margin-top: $item + px;
+  }
+}
+$fontStyle: sm 20px 10px, base 30px 15px, lg 40px 30px;
+
+@each $class, $lineHeight, $fontSize in $fontStyle {
+  .font-#{$class} {
+    line-height: $lineHeight;
+    font-size: $fontSize;
+  }
+}
+
+.fomt-sm {
+  font-size: 10px;
+  line-height: 30px;
+}
+.font-base {
+  font-size: 15px;
+  line-height: 30px;
+}
+// map 객체
+// const obj ={
+//    key:value
+$fontSize: (
+  lg: 20px,
+  base: 15px,
+  sm: 10px,
+);
+
+div {
+  font-size: map-get($map: $fontSize, $key: lg);
+}

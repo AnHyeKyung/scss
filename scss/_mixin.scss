@@ -1,0 +1,23 @@
+@mixin background($img, $coordinate) {
+  background: url(#{$imgurl}/#{$img}) no-repeat $coordinate;
+}
+
+@mixin border($borderWidth: 1px, $borderColor: #000, $hoverColor: red) {
+  border: $borderWidth solid $borderColor;
+  &:hover {
+    border-color: $hoverColor;
+  }
+}
+
+.mixin {
+  @include background("img.png", 10px 20px);
+}
+.icon {
+  @include background("icon.svg", center right);
+}
+.box {
+  @include border(2px, blue, pink);
+}
+.box2 {
+  @include border(3px, pink, orange);
+}
