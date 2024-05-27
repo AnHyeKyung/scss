@@ -1,0 +1,133 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+button {
+  background-color: transparent;
+  cursor: pointer;
+}
+body {
+  padding: 30px;
+}
+.main {
+  width: 1000px;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 29px;
+}
+.jaju {
+  color: #121314;
+  font-size: 26px;
+  font-weight: 400;
+}
+.btn-class {
+  width: 122px;
+  height: 33px;
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  border: 1px solid #777;
+  background: #fff;
+}
+.line {
+  margin-top: 17px;
+  width: 1000px;
+  height: 2px;
+  background: #000;
+}
+.faq-list {
+  //   padding: 20px;
+  details[open] {
+    summary {
+      &::after {
+        transform: translateY(-50%) rotate(135deg);
+      }
+    }
+  }
+}
+%margin-name {
+  margin-left: 22px;
+}
+.question_1 {
+  @extend %margin-name;
+}
+.answer_1 {
+  padding: 15px;
+  @extend %margin-name;
+}
+.content {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  background-color: #e7e7e7;
+}
+summary {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 52px;
+  flex-shrink: 0;
+  font-size: 15px;
+  color: #121314;
+  &::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    border-bottom: 2px solid #444;
+    border-left: 2px solid #444;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+}
+
+@mixin faqBadge($color, $arrow: false, $direction: right) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 29px;
+  height: 29px;
+  border-radius: 3px;
+  background-color: $color;
+  color: #fff;
+  @if $arrow {
+    &::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      position: absolute;
+      background-color: $color;
+    }
+  }
+
+  @if $direction == right {
+    &::after {
+      right: 0;
+      top: 50%;
+      transform: translate(50%, -50%) rotate(45deg);
+    }
+  } @else if $direction == left {
+    &::after {
+      left: 0;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+}
+
+.question {
+  @include faqBadge(orange, true);
+}
+.answer {
+  @include faqBadge(#6b5bba, true);
+}

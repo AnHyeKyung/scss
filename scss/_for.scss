@@ -1,0 +1,36 @@
+@for $index from 1 through 5 {
+  .box {
+    lift: $index + px;
+  }
+}
+
+.icon-list {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  li {
+    width: 150px;
+    height: 250px;
+    border: 1px solid silver;
+  }
+  @for $index from 1 through 4 {
+    .icon#{$index} {
+      @include background("icon#{$index}.svg", null);
+      &:hover {
+        @include background("icon#{$index}_on.svg", null);
+      }
+    }
+  }
+  //   .icon1 {
+  //     @include background("icon1.svg", null);
+  //   }
+  //   .icon2 {
+  //     @include background("icon2.svg", null);
+  //   }
+  //   .icon3 {
+  //     @include background("icon3.svg", null);
+  //   }
+  //   .icon4 {
+  //     @include background("icon4.svg", null);
+  //   }
+}

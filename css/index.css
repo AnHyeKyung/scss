@@ -1,112 +1,19 @@
-div {
-  width: 100px;
-  height: 100px;
-  background: url(../images/cl.png) no-repeat center;
-}
+/* Error: Undefined variable.
+ *   ,
+ * 3 |   left: $xValue;
+ *   |         ^^^^^^^
+ *   '
+ *   scss\_ifelse.scss 3:9   position()
+ *   scss\_ifelse.scss 16:3  @import
+ *   scss\index.scss 11:9    root stylesheet */
 
-.box {
-  width: 100px;
-  height: 100px;
-  border: 2px solid red;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a   \2577 \a 3 \2502    left: $xValue;\d\a   \2502          ^^^^^^^\a   \2575 \a   scss\\_ifelse.scss 3:9   position()\a   scss\\_ifelse.scss 16:3  @import\a   scss\\index.scss 11:9    root stylesheet";
 }
-
-p {
-  font-size: 15px;
-}
-
-.string {
-  position: absolute;
-  background: "../images/cl.png";
-}
-
-.number {
-  font-size: calc(20px + 3rem);
-  line-height: 1;
-}
-
-.color {
-  color: rgba(121, 185, 164, 0.6);
-}
-
-.mt10 {
-  margin-top: 10px;
-}
-
-.mt20 {
-  margin-top: 20px;
-}
-
-.mt30 {
-  margin-top: 30px;
-}
-
-.mt40 {
-  margin-top: 40px;
-}
-
-.mt50 {
-  margin-top: 50px;
-}
-
-.font-sm {
-  line-height: 20px;
-  font-size: 10px;
-}
-
-.font-base {
-  line-height: 30px;
-  font-size: 15px;
-}
-
-.font-lg {
-  line-height: 40px;
-  font-size: 30px;
-}
-
-.fomt-sm {
-  font-size: 10px;
-  line-height: 30px;
-}
-
-.font-base {
-  font-size: 15px;
-  line-height: 30px;
-}
-
-div {
-  font-size: 20px;
-}
-
-.gallery {
-  color: red;
-}
-.gallery__list {
-  color: blue;
-}
-.gallery__image {
-  color: orange;
-}
-
-.mixin {
-  background: url(../images//img.png) no-repeat 10px 20px;
-}
-
-.icon {
-  background: url(../images//icon.svg) no-repeat center right;
-}
-
-.box {
-  border: 2px solid blue;
-}
-.box:hover {
-  border-color: pink;
-}
-
-.box2 {
-  border: 3px solid pink;
-}
-.box2:hover {
-  border-color: orange;
-}
-
-/*# sourceMappingURL=index.css.map */
