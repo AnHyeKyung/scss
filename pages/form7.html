@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/form7.css" />
+  </head>
+  <body>
+    <div class="main">
+      <h1>폼7</h1>
+      <ul class="essential">
+        <li>필수정보</li>
+        <li>*필수입력 항목입니다.</li>
+      </ul>
+      <div class="line"></div>
+      <div class="item">
+        <span class="item_name">아이디</span><span class="star">*</span>
+        <div class="input_a">
+          <input type="text" style="--w: 390px" />
+          <button type="button" class="btn width">중복확인</button>
+        </div>
+      </div>
+      <div class="line2"></div>
+
+      <div class="item">
+        <span class="item_name">패스워드</span><span class="star">*</span>
+        <div class="input_a">
+          <input type="password" style="--w: 390px" />
+          <p>※비밀번호는 영문/숫자/특수문자를 조합하여 8~16자로 입력해주세요.</p>
+        </div>
+      </div>
+      <div class="line2"></div>
+
+      <div class="item">
+        <span class="item_name">패스워드 확인</span><span class="star">*</span>
+        <div class="input_a"><input type="tel" style="--w: 390px" /></div>
+      </div>
+      <div class="line2"></div>
+
+      <div class="item">
+        <span class="item_name">이름</span><span class="star">*</span>
+        <div class="input_a"><input type="email" style="--w: 390px" /></div>
+      </div>
+      <div class="line2"></div>
+      <div class="item">
+        <span class="item_name">휴대전화</span><span class="star">*</span>
+        <div class="input_a">
+          <div class="tel-group">
+            <select name="" id="" style="--w: 113px">
+              <option value="">선택</option>
+              <option value="">선택1</option>
+              <option value="">선택2</option>
+            </select>
+            -
+            <input type="tel" style="--w: 113px" />
+            -
+            <input type="tel" style="--w: 113px" />
+          </div>
+          <!-- <select name="" id="" style="--w: 113px">
+            <option value="">선택</option>
+            <option value="">선택1</option>
+            <option value="">선택2</option>
+          </select>
+          <input type="number" style="--w: 113px" />
+          <input type="number" style="--w: 113px" /> -->
+        </div>
+      </div>
+      <div class="line2"></div>
+
+      <div class="item">
+        <span class="item_name">이메일</span><span class="star">*</span>
+        <div class="input_a">
+          <input type="email" style="--w: 140px" />
+          @
+          <input type="email" style="--w: 190px" />
+          <select name="" id="" style="--w: 190px">
+            <option value="">직접입력</option>
+            <option value="">naver.com</option>
+            <option value="">gmail.com</option>
+            <option value="">hanmail.net</option>
+            <option value="">nate.com</option>
+          </select>
+        </div>
+      </div>
+      <div class="line2"></div>
+      <div class="item">
+        <span class="item_name">주소</span><span class="star">*</span>
+        <div class="input_a">
+          <div class="address">
+            <input type="number" style="--w: 244px" />
+            <button type="button" class="btn width">우편번호검색</button>
+            <input type="text" style="--w: 426px" />
+            <input type="text" style="--w: 426px" />
+          </div>
+        </div>
+      </div>
+      <div class="line2"></div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      선택정보
+      <div class="line"></div>
+      <div class="info">
+        <div class="selinfo">추천인 아이디</div>
+        <input type="text" style="--w: 390px" />
+        <button type="button" class="btn width">추천인아이디확인</button>
+      </div>
+      <div class="line2"></div>
+
+      <div class="info">
+        <div class="selinfo">생년월일</div>
+        <input type="date" style="--w: 160px" />
+      </div>
+      <div class="line2"></div>
+
+      <div class="info">
+        <div class="selinfo">성별</div>
+        <input type="radio" />남 <input type="radio" />여
+      </div>
+      <div class="line2"></div>
+
+      <div class="big_button">
+        <button type="button" class="btn black">취소</button>
+        <button type="button" class="btn red">회원가입완료</button>
+      </div>
+    </div>
+  </body>
+</html>

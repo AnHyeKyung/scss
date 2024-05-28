@@ -1,0 +1,222 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+$imgurl: "../images";
+@mixin background($img, $coordinate) {
+  background: url(#{$imgurl}/#{$img}) no-repeat $coordinate;
+}
+//방법2
+@mixin button($className) {
+  @if $className == "white" {
+    &.#{$className} {
+      border: 1px solid #b9b9b9;
+      background: #fff;
+      color: #000;
+    }
+  } @else if $className == "gray" {
+    &.#{$className} {
+      background: #b9b9b9;
+      color: #fff;
+    }
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 13px;
+  border: none;
+  background-color: transparent;
+  box-sizing: border-box;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0 20px;
+  &.width {
+    min-width: 120px;
+  }
+  @include button("white");
+  @include button("gray");
+
+  //   &.white {
+  //     border: 1px solid #b9b9b9;
+  //     background: #fff;
+  //     color: #000;
+  //   }
+  //   &.gray {
+  //     background: #b9b9b9;
+  //     color: #fff;
+  //   }
+}
+
+// 방법1
+// @mixin buttonColor($className)
+//     @if $className == "white" {
+//         &.#($className){
+//             border: 1px solid #b9b9b9;
+//             background: #fff
+//             color: #000;
+//         }
+//     } @else if $className ==
+
+// .btn {
+//       display: inline-flex;
+//       align-items: center;
+//       justify-content: center;
+//       min-width: 120px; //최소 가로 크기
+//       padding: 0 20px;
+//       height: 40px;
+//       border-radius: 20px;
+//       font-size: 13px;
+//       border: none;
+//       background-color: transparent;
+//       box-sizing: border-box;
+//       text-decoration: none;
+//       cursor: pointer;
+//       @include buttonColor("white");
+//       @include buttonColor("gray");
+
+//   &.white {
+//     border: 1px solid #b9b9b9;
+//     background: #fff;
+//     color: #000;
+//   }
+//   &.gray {
+//     background: #b9b9b9;
+//     color: #fff;
+//   }
+
+//버튼 CSS
+// button :인라인블럭요소
+//a: 인라인요소
+// .btn {
+//   display: inline-flex;
+//   align-items: center;
+//   justify-content: center;
+//   min-width: 120px; //최소 가로 크기
+//   padding: 0 20px;
+//   height: 40px;
+//   border-radius: 20px;
+//   font-size: 13px;
+//   border: none;
+//   background-color: transparent;
+//   box-sizing: border-box;
+//   text-decoration: none;
+//   cursor: pointer;
+//   &.white {
+//     border: 1px solid #b9b9b9;
+//     background: #fff;
+//     color: #000;
+//   }
+//   &.gray {
+//     background: #b9b9b9;
+//     color: #fff;
+//   }
+// }
+
+//방법3
+$radio: (
+  className: ".radio",
+  radioOffImage: "radio_off.svg",
+  radioOnImage: "radio_on.svg",
+  height: 19px,
+  paddingLeft: 21px,
+  radioOffTextColor: #969696,
+  radioOnTextColor: #3f3f3f,
+  fontSize: 13px,
+);
+
+$checkType1: (
+  className: ".checkbox",
+  radioOffImage: "check_off.svg",
+  radioOnImage: "check_on.svg",
+  height: 22px,
+  paddingLeft: 28px,
+  radioOffTextColor: #000,
+  radioOnTextColor: #000,
+  fontSize: 16px,
+);
+
+//방법2
+//맵형태의 변수
+// $radio: (
+//     //key:Value;
+//     radioOffImage: "radio_off.svg",
+//     radioOnImage: "radio_on.svg",
+//     height: 19px,
+//     paddingLeft: 21px,
+//     radioOffTextColor: #969696,
+//     radioOnTextColor: #3f3f3f,
+//     fontSize: 13px
+//   )
+@mixin radio($radio) {
+  #{map-get($radio, className)} {
+    display: none;
+    + label {
+      @include background(map-get($radio, radioOffImage), left);
+      display: inline-flex;
+      height: map-get($radio, height);
+      padding-left: map-get($radio, paddingLeft);
+      color: map-get($radio, radioOffTextColor);
+      font-size: map-get($radio, fontSize);
+    }
+    &:checked {
+      + label {
+        @include background(map-get($radio, radioOnImage), left);
+        color: map-get($radio, radioOnTextColor);
+      }
+    }
+  }
+}
+@include radio($radio);
+@include radio($checkType1);
+
+// .radio {
+//   @include radio;
+// }
+// 방법1
+//오프이미지, 온이미지, 높이, 좌측여백, 오프글씨색상, 온글씨색상, 글씨크기
+// @mixin radio($offImage, $height, $space, $offColor, $textSize) {
+//   display: none;
+//   + label {
+//     @include background($offImage, left);
+//     display: inline-flex;
+//     height: $height;
+//     padding-left: $space;
+//     color: $offColor;
+//     font-size: $textSize;
+//   }
+//   &:checked {
+//     + label {
+//       @include background($onImage, left);
+//       color: $onColor;
+//     }
+//   }
+// }
+// .radio {
+//   @include radio("radio_off.svg", "radio_on.svg", 19px, 21px, #969696, #3f3f3f, 13px);
+// }
+
+// CSS방식
+// .radio {
+//   display: none;
+//   + label {
+//     @include background("radio_off.svg", left);
+//     display: inline-flex;
+//     height: 19px;
+//     padding-left: 21px;
+//     color: #969696;
+//     font-size: 13px;
+//   }
+//   &:checked {
+//     + label {
+//       @include background("radio_on.svg", left);
+//       color: #3f3f3f;
+//     }
+//   }
+// }
